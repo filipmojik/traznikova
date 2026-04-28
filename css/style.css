@@ -669,13 +669,58 @@ p{color:var(--brown);font-size:.95rem;line-height:1.8}
   transition:transform .7s var(--ease);background:var(--cream-200);
 }
 .cert-gallery__item:hover img{transform:scale(1.04)}
-.cert-gallery__item figcaption{
+.cert-gallery__item figcaption,.products__img figcaption{
   padding:.85rem 1rem;
   font-family:var(--font-body);font-size:.78rem;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;
   color:var(--brown);text-align:center;
   border-top:1px solid var(--cream-200);background:var(--cream-50);
 }
+
+/* ============================================
+   PRODUCTS
+   ============================================ */
+.products{padding:clamp(4rem,8vw,6.5rem) 0;background:var(--cream-50)}
+.products__brands{
+  max-width:780px;margin:0 auto 2.75rem;
+  background:var(--white);border:1px solid var(--cream-300);
+  border-radius:4px;padding:1.75rem clamp(1.25rem,3vw,2.5rem);
+  box-shadow:var(--shadow-sm);
+}
+.products__brand-list{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:.85rem 1.75rem;list-style:none;
+}
+.products__brand-list li{
+  font-size:.92rem;color:var(--brown);line-height:1.5;
+  padding-left:1.1rem;position:relative;
+}
+.products__brand-list li::before{
+  content:"";position:absolute;left:0;top:.68em;
+  width:.45rem;height:.45rem;border-radius:50%;
+  background:var(--gold);
+}
+.products__brand-list strong{color:var(--charcoal);font-weight:600}
+.products__gallery{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+}
+.products__img{
+  position:relative;overflow:hidden;border-radius:4px;
+  background:var(--white);border:1px solid var(--cream-300);
+  box-shadow:var(--shadow-sm);transition:all .4s var(--ease);
+  display:flex;flex-direction:column;
+}
+.products__img:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 38px rgba(200,169,126,.18);
+  border-color:var(--gold-light);
+}
+.products__img img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  transition:transform .7s var(--ease);background:var(--cream-200);
+}
+.products__img:hover img{transform:scale(1.04)}
 
 /* ============================================
    ANIMATIONS
@@ -732,6 +777,8 @@ p{color:var(--brown);font-size:.95rem;line-height:1.8}
   .footer__desc{max-width:100%}
   .results__gallery{grid-template-columns:repeat(2,1fr)}
   .cert-gallery{grid-template-columns:repeat(2,1fr)}
+  .products__gallery{grid-template-columns:repeat(2,1fr)}
+  .products__brand-list{grid-template-columns:1fr}
   .nav__menu{gap:1.4rem}
   .nav__link{font-size:.7rem}
 }
@@ -813,6 +860,7 @@ p{color:var(--brown);font-size:.95rem;line-height:1.8}
   .results__gallery{grid-template-columns:1fr}
   .cert-gallery{grid-template-columns:1fr;gap:1rem}
   .cert-gallery__item img{aspect-ratio:4/5}
+  .products__gallery{grid-template-columns:1fr;gap:1rem}
   .services__category-title::before,.services__category-title::after{max-width:40px}
   .services__category-title span{font-size:1.1rem}
   .other-row{flex-direction:column;align-items:flex-start;gap:.3rem;padding:.9rem 1.15rem}
